@@ -23,7 +23,7 @@ public class TestController {
     public String home(ModelMap model){
         User user = new User();
         user.setId(1);
-        user.setNickName("Jeans");
+        user.setNicename("Jeans");
         model.addAttribute("usr1",user);
         testDaoImpl.test();
         return "home";

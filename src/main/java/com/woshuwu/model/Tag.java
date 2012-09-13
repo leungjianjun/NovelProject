@@ -8,7 +8,7 @@ package com.woshuwu.model;
  */
 public class Tag {
 
-    private int id;
+    private long id;
 
     private String name;
 }

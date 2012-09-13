@@ -9,20 +9,26 @@ import java.util.Calendar;
  */
 public class Chapter {
 
-    private int id;
+    /**
+     * primary key,auto increment
+     */
+    private long id;
 
     /**
      * 文章标题
+     * varchar max(200)
      */
     private String title;
 
     /**
      * 文章内容
+     * mediumText
      */
     private String content;
 
     /**
      * 更新日期
+     * datetime
      */
-    private Calendar updateDate;
+    private Calendar updateTime;
 }

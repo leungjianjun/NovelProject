@@ -11,18 +11,51 @@ import java.util.List;
  */
 public class Book {
 
-    private int id;
+    /**
+     * primary id,auto increment
+     */
+    private long id;
 
+    /**
+     * varchar max(200)
+     */
     private String name;
 
+    /**
+     * text
+     */
     private String introduction;
 
-    private Calendar createDate;
+    /**
+     * the time and date when the book is created
+     *
+     * datetime
+     */
+    private Calendar createTime;
 
+    /**
+     * the time and date when the book is updated,usually the chapter
+     *
+     *  datetime
+     */
+    private Calendar updateTime;
+
+    /**
+     * the book contents many volumes
+     * @relationship one-to-many
+     */
     private List<Volume> volumes;
 
+    /**
+     * the category of the book
+     * @relationship many-to-one
+     */
     private Category category;
 
+    /**
+     * the tags which the book contains
+     * @relationship many-to-many
+     */
     private List<Tag> tags;
 
 

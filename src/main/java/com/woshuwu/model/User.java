@@ -1,5 +1,7 @@
 package com.woshuwu.model;
 
+import java.util.Calendar;
+
 /**
  * 注册用户
  * Author: ljj
@@ -8,29 +10,38 @@ package com.woshuwu.model;
  */
 public class User {
 
-    private  int id;
+    private  long id;
 
-    private String nickName;
+    /**
+     * user's nick name, can repeat in database
+     * varchar max(50)
+     */
+    private String nicename;
 
+    /**
+     * varchar max(50),unique
+     */
     private String account;
+
+    private Calendar createTime;
 
     private String email;
 
     private String mobile;
 
-    public String getNickName() {
-        return nickName;
+    public String getNicename() {
+        return nicename;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNicename(String nicename) {
+        this.nicename = nicename;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

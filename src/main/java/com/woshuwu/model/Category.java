@@ -9,7 +9,7 @@ package com.woshuwu.model;
  */
 public class Category {
 
-    private int id;
+    private long id;
 
     private String name;
 }

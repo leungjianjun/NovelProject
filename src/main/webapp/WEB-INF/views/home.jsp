@@ -5,6 +5,6 @@
 </head>
 <body>
 <p>Hello World</p>
-<p>${usr1.name}</p>
+<p>${usr1.nicename}</p>
 </body>
 </html>
