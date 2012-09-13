@@ -10,6 +10,9 @@ import java.util.Calendar;
  */
 public class User {
 
+    /**
+     * primary key, auto increment
+     */
     private  long id;
 
     /**
@@ -23,10 +26,19 @@ public class User {
      */
     private String account;
 
+    /**
+     * datetime
+     */
     private Calendar createTime;
 
+    /**
+     * varchar max(50)
+     */
     private String email;
 
+    /**
+     * varchar max(20)
+     */
     private String mobile;
 
     public String getNicename() {

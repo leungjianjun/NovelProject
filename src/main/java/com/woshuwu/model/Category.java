@@ -11,5 +11,8 @@ public class Category {
 
     private long id;
 
+    /**
+     * varchar max(20)
+     */
     private String name;
 }

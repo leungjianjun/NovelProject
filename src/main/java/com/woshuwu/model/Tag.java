@@ -8,7 +8,13 @@ package com.woshuwu.model;
  */
 public class Tag {
 
+    /**
+     * primary key, auto increment
+     */
     private long id;
 
+    /**
+     * varchar max(10)
+     */
     private String name;
 }

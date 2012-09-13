@@ -58,5 +58,10 @@ public class Book {
      */
     private List<Tag> tags;
 
+    /**
+     * the status of the book,like finish,to be continue
+     */
+    private BookStatus bookStatus;
+
 
 }
