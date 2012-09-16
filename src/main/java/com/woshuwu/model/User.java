@@ -41,6 +41,14 @@ public class User {
      */
     private String mobile;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getNicename() {
         return nicename;
     }
@@ -49,11 +57,35 @@ public class User {
         this.nicename = nicename;
     }
 
-    public long getId() {
-        return id;
+    public String getAccount() {
+        return account;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public Calendar getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Calendar createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

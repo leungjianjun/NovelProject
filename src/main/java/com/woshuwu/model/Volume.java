@@ -13,6 +13,7 @@ public class Volume {
 
     /**
      *  primary key, auto increment
+     *  卷根据id排序
      */
     private int id;
 
@@ -25,8 +26,6 @@ public class Volume {
      *  text
      */
     private String introduction;
-
-    private int sortOrder;
 
     private Calendar createTime;
 

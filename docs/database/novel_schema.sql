@@ -37,7 +37,6 @@ CREATE TABLE IF NOT EXISTS `volume` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `introduction` text NOT NULL,
-  `sort_order` int(11) NOT NULL,
   `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `book_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
@@ -79,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `mobile` varchar(20),
   `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
-  KEY `category_id` (`category_id`),
   UNIQUE KEY `account_key` (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -95,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `author` (
   `user_id` int(11) unsigned NOT NULL,
   `real_name` varchar(20) NOT NULL,
   `id_card` varchar(30) NOT NULL,
-  `authro_type` int(11) NOT NULL DEFAULT '0'
+  `authro_type` int(11) NOT NULL DEFAULT '0',
   `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id` (`user_id`)
@@ -135,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `tag` (
 --
 
 DROP TABLE IF EXISTS `tag_book`;
-CREATE TABLE IF NOT EXISTS `tag` (
+CREATE TABLE IF NOT EXISTS `tag_book` (
   `tag_id` int(11) unsigned NOT NULL,
   `book_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`tag_id`,`book_id`)

@@ -1,6 +1,6 @@
 package com.woshuwu.controller;
 
-import com.woshuwu.dao.impl.TestDaoImpl;
+import com.woshuwu.dao.TestDao;
 import com.woshuwu.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/test")
 public class TestController {
 
-    private TestDaoImpl testDaoImpl;
+    private TestDao testDao;
 
     @RequestMapping("index.do")
     public String home(ModelMap model){
@@ -25,16 +25,16 @@ public class TestController {
         user.setId(1);
         user.setNicename("Jeans");
         model.addAttribute("usr1",user);
-        testDaoImpl.test();
+        testDao.test();
         return "home";
     }
 
-    public TestDaoImpl getTestDaoImpl() {
-        return testDaoImpl;
+    public TestDao getTestDao() {
+        return testDao;
     }
 
     @Autowired
-    public void setTestDaoImpl(TestDaoImpl testDaoImpl) {
-        this.testDaoImpl = testDaoImpl;
+    public void setTestDao(TestDao testDao) {
+        this.testDao = testDao;
     }
 }

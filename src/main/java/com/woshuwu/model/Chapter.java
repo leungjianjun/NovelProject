@@ -11,6 +11,7 @@ public class Chapter {
 
     /**
      * primary key,auto increment
+     * 文章顺序根据章节id排序
      */
     private long id;
 
@@ -31,4 +32,36 @@ public class Chapter {
      * datetime
      */
     private Calendar updateTime;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Calendar getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Calendar updateTime) {
+        this.updateTime = updateTime;
+    }
 }

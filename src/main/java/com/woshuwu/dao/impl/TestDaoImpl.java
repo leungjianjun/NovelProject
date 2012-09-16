@@ -23,7 +23,7 @@ public class TestDaoImpl extends JdbcDaoSupport implements TestDao {
 
     @Override
     public void test() {
-        this.getJdbcTemplate().execute("INSERT INTO user (name, age) VALUES('aa',12)");
+        this.getJdbcTemplate().execute("INSERT INTO user (nicename,account,email,mobile,create_teime) VALUES('aa','were','www','123','0000-00-00 00:00:00')");
 
     }
 }
