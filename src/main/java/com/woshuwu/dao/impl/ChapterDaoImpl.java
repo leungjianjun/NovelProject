@@ -38,10 +38,10 @@ public class ChapterDaoImpl extends JdbcDaoSupport implements ChapterDao {
                 public Object mapRow(ResultSet rs, int i) throws SQLException {
                     Chapter chapter = new Chapter();
                     chapter.setTitle(rs.getString("title"));
-                    //chapter.setContent(rs.getString("content"));
-                    //Calendar createTime = Calendar.getInstance();
-                    //createTime.setTime(rs.getTimestamp("update_time"));
-                    //chapter.setUpdateTime(createTime);
+                    chapter.setContent(rs.getString("content"));
+                    Calendar updateTime = Calendar.getInstance();
+                    updateTime.setTime(rs.getTimestamp("update_time"));
+                    chapter.setUpdateTime(updateTime);
                     return chapter;
                 }
 

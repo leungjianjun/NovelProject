@@ -9,6 +9,8 @@ import java.util.Calendar;
  */
 public class Chapter {
 
+    //========== model field to be persisted =============
+
     /**
      * primary key,auto increment
      * 文章顺序根据章节id排序
@@ -32,6 +34,23 @@ public class Chapter {
      * datetime
      */
     private Calendar updateTime;
+
+    //======= define chapter status enum ========
+
+    enum ChapterStatus {
+
+    }
+
+    //===============  util method ================
+    public String updateTime4Display(){
+        return updateTime.get(Calendar.YEAR)+"-"+updateTime.get(Calendar.MONTH)+
+                "-"+updateTime.get(Calendar.DATE)+" "+updateTime.get(Calendar.HOUR_OF_DAY)+":"+
+                updateTime.get(Calendar.MINUTE)+":"+updateTime.get(Calendar.SECOND);
+
+    }
+
+
+    //============= setter and getter method =======
 
     public long getId() {
         return id;

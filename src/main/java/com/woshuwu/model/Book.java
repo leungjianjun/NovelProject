@@ -63,6 +63,8 @@ public class Book {
      */
     private BookStatus bookStatus;
 
+    //==================== setter and getter method ================
+
     public long getId() {
         return id;
     }
