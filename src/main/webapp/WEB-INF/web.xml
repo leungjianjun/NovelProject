@@ -7,16 +7,30 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <display-name>Archetype Created Web Application</display-name>
+
+    <!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/root-context.xml
+        </param-value>
+    </context-param>
+
     <filter>
-        <filter-name>SecurityFilter</filter-name>
-        <filter-class>com.woshuwu.security.DelegatingFilterProxy</filter-class>
+        <filter-name>securityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>SecurityFilter</filter-name>
+        <filter-name>securityFilterChain</filter-name>
         <url-pattern>*.html</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+
+    <!-- Creates the Spring Container shared by all Servlets and Filters -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>

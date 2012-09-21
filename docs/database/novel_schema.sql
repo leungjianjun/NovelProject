@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) NOT NULL DEFAULT '',
   `mobile` varchar(20),
   `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_type` unsigned DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account_key` (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

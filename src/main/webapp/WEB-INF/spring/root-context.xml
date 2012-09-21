@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <!-- Database Configuration-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/novel_schema?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"/>
+        <property name="username" value="root"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <!-- Security Configuration-->
+
+    <bean id="userDao" class="com.woshuwu.dao.impl.UserDaoImpl">
+        <constructor-arg><ref bean="dataSource"/></constructor-arg>
+    </bean>
+
+    <bean id="securityFilterChain" class="com.woshuwu.security.SecurityFilterChain">
+        <property name="userDao"><ref bean="userDao"/></property>
+    </bean>
+
+</beans>

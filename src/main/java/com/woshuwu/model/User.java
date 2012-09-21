@@ -41,6 +41,9 @@ public class User {
      */
     private String mobile;
 
+    private Roles roles;
+
+   //======= setter and getter method
     public long getId() {
         return id;
     }
@@ -87,5 +90,13 @@ public class User {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public Roles getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Roles roles) {
+        this.roles = roles;
     }
 }
