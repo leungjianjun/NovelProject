@@ -16,6 +16,24 @@ public class Category {
      */
     private String name;
 
+    private Category[] parentCategories;
+
+    public long[] getParentCategoryIds(){
+        long id1 = this.id & 0xff000000;
+        long id2 = this.id & 0xffff0000;
+        long id3 = this.id & 0xffffff00;
+        if((this.id & 0x00ffffff) == 0){
+             return new long[]{};//root category
+        }else if((this.id & 0x0000ffff) == 0){
+             return new long[]{id1};
+        }else if((this.id & 0x000000ff) == 0){
+            return new long[]{id1,id2};
+        }else{
+            return new long[]{id1,id2,id3};
+        }
+    }
+
+    //======== setter and getter method
     public long getId() {
         return id;
     }
@@ -31,4 +49,13 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Category[] getParentCategories() {
+        return parentCategories;
+    }
+
+    public void setParentCategories(Category[] parentCategories) {
+        this.parentCategories = parentCategories;
+    }
+
 }

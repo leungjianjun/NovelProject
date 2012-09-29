@@ -35,11 +35,12 @@ public class Chapter {
      */
     private Calendar updateTime;
 
-    //======= define chapter status enum ========
+    private ChapterStatus chapterStatus;
 
-    enum ChapterStatus {
-
-    }
+    /**
+     * 章节所属于的卷
+     */
+    private Volume volume;
 
     //===============  util method ================
     public String updateTime4Display(){
@@ -82,5 +83,21 @@ public class Chapter {
 
     public void setUpdateTime(Calendar updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public ChapterStatus getChapterStatus() {
+        return chapterStatus;
+    }
+
+    public void setChapterStatus(ChapterStatus chapterStatus) {
+        this.chapterStatus = chapterStatus;
+    }
+
+    public Volume getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Volume volume) {
+        this.volume = volume;
     }
 }

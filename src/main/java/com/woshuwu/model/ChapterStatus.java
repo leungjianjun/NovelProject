@@ -3,9 +3,9 @@ package com.woshuwu.model;
 /**
  * Created with IntelliJ IDEA.
  * Author: ljj
- * Date: 12-9-13
- * Time: 下午11:46
+ * Date: 12-9-22
+ * Time: 下午11:11
  */
-public enum BookStatus {
-    CONTINUED,DONE
+public enum ChapterStatus {
+    DRAFT,PUBLISH
 }

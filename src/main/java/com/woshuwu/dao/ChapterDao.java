@@ -11,5 +11,5 @@ import com.woshuwu.model.Chapter;
  */
 public interface ChapterDao {
 
-    public Chapter queryChapterById(int id);
+    public Chapter queryChapterById(long id);
 }

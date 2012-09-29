@@ -1,6 +1,9 @@
 package com.woshuwu.controller;
 
+import com.woshuwu.dao.BookDao;
+import com.woshuwu.dao.CategoryDao;
 import com.woshuwu.dao.ChapterDao;
+import com.woshuwu.model.Book;
 import com.woshuwu.model.Chapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,27 +24,34 @@ public class BookController {
     //==================define dao ==============================
     private ChapterDao chapterDao;
 
+    private BookDao bookDao;
+
+    private CategoryDao categoryDao;
+
     //-----------------------------------------------------------
     //--------------- Novel View Module -------------------------
     /**
-     * 页面内容：章名、小说名、更新时间、正文、上一章，回目录，下一章
+     * 页面内容：章名、小说名、更新时间、正文、上一章，回目录，下一章,分类
      * @param model
      * @return
      */
     @RequestMapping(value="/chapterRead/{bookId}-{chapterId}.html", method= RequestMethod.GET)
-    public String chapterReadPage(@PathVariable int bookId, @PathVariable int chapterId, ModelMap model){
+    public String chapterReadPage(@PathVariable long bookId, @PathVariable long chapterId, ModelMap model){
         Chapter chapter = chapterDao.queryChapterById(chapterId);
         model.addAttribute("chapter",chapter);
+        Book book = bookDao.queryBookById(bookId);
+        book.setCategory(categoryDao.queryCategoryById(book.getCategory().getId()));
+        model.addAttribute("book",book);
         return "chapter_read";
     }
 
     @RequestMapping(value="bookRead/{bookId}.html", method= RequestMethod.GET)
-    public String bookReadPage(@PathVariable int bookId, ModelMap model){
+    public String bookReadPage(@PathVariable long bookId, ModelMap model){
         return "book_read";
     }
 
     @RequestMapping(value="bookIntroduce/{bookId}.html", method= RequestMethod.GET)
-    public String bookIntroducePage(@PathVariable int bookId, ModelMap model){
+    public String bookIntroducePage(@PathVariable long bookId, ModelMap model){
         return "book_introduce";
     }
 
@@ -65,5 +75,23 @@ public class BookController {
     @Autowired
     public void setChapterDao(ChapterDao chapterDao) {
         this.chapterDao = chapterDao;
+    }
+
+    public BookDao getBookDao() {
+        return bookDao;
+    }
+
+    @Autowired
+    public void setBookDao(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+
+    public CategoryDao getCategoryDao() {
+        return categoryDao;
+    }
+
+    @Autowired
+    public void setCategoryDao(CategoryDao categoryDao) {
+        this.categoryDao = categoryDao;
     }
 }

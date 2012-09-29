@@ -3,6 +3,8 @@ package com.woshuwu.dao.impl;
 import com.woshuwu.dao.ChapterDao;
 import com.woshuwu.model.Book;
 import com.woshuwu.model.Chapter;
+import com.woshuwu.model.ChapterStatus;
+import com.woshuwu.model.Volume;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -28,9 +30,9 @@ public class ChapterDaoImpl extends JdbcDaoSupport implements ChapterDao {
     }
 
     @Override
-    public Chapter queryChapterById(int id) {
+    public Chapter queryChapterById(long id) {
         Chapter chapter = (Chapter)this.getJdbcTemplate().queryForObject(
-            "SELECT content, title, update_time, volume_id FROM chapter WHERE id = ?",
+            "SELECT * FROM chapter WHERE id = ?",
             new Object[]{id},
             new RowMapper(){
 
@@ -42,6 +44,11 @@ public class ChapterDaoImpl extends JdbcDaoSupport implements ChapterDao {
                     Calendar updateTime = Calendar.getInstance();
                     updateTime.setTime(rs.getTimestamp("update_time"));
                     chapter.setUpdateTime(updateTime);
+                    chapter.setId(rs.getInt("id"));
+                    chapter.setChapterStatus(ChapterStatus.values()[rs.getInt("chapter_status")]);
+                    Volume volume = new Volume();
+                    volume.setId(rs.getLong("volume_id"));
+                    chapter.setVolume(volume);
                     return chapter;
                 }
 

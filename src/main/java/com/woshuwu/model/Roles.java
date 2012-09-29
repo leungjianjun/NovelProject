@@ -59,6 +59,10 @@ public class Roles {
         }
     }
 
+    public int[] getAllRole(){
+        return new int[]{};
+    }
+
     //define role. we can only define 32 different roles at most
 
     public static final int NO_ROLE = 0x00000000;
