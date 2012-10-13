@@ -18,7 +18,7 @@
     <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.8.2-min.js"/>" ></script>
     <link href="<c:url value="/resources/css/global.css"/>" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:#EEFAEE">
 <!-- Navbar
     ============================================================ -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -52,9 +52,30 @@
             </div>
         </div><!-- .navbar-inner END-->
     </div><!-- .navbar END -->
-<p><c:out value="${chapter.title}" /></p>
-<p>${chapter.title}</p>
-<p>${chapter.updateTime4Display()}</p>
-<p>${chapter.content}</p>
+    <header>
+        <div class="container">
+            <img src="/resources/temp/1.jpg" />
+        </div><!-- .container END-->
+        <div class="container">
+            <ul>
+                <li class="home"><a href=""></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="span10">
+                <div class="page-header">
+                    <h2>${chapter.title}</h2>
+                    <h5 class="muted">小说：<a>${book.name}</a>&nbsp;|&nbsp;作者:<a>${book.author.nicename}</a>&nbsp;|&nbsp;更新时间:${chapter.updateTime4Display()}</h5>
+                </div>
+                <div class="book-content">
+                    ${chapter.content}
+                </div>
+
+            </div>
+            <div class="span2"></div>
+        </div><!-- .row -->
+    </div><!-- .container -->
 </body>
 </html>

@@ -63,6 +63,8 @@ public class Book {
      */
     private BookStatus bookStatus;
 
+    private Author author;
+
     //==================== setter and getter method ================
 
     public long getId() {
@@ -135,5 +137,13 @@ public class Book {
 
     public void setBookStatus(BookStatus bookStatus) {
         this.bookStatus = bookStatus;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }
