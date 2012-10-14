@@ -56,26 +56,74 @@
         <div class="container">
             <img src="/resources/temp/1.jpg" />
         </div><!-- .container END-->
-        <div class="container">
-            <ul>
-                <li class="home"><a href=""></a></li>
-            </ul>
-        </div>
     </header>
     <div class="container">
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon-home"></i>&nbsp;&nbsp;小说首页</a><span class="divider">/</span></li>
+                <li><a href="#">Library</a><span class="divider">/</span></li>
+                <li class="active"><a href="#">Data</a></li>
+
+                <!-- 阅读设置 -->
+                <li id="set-font-size" style="float: right;">
+                    <select>
+                        <option>字号</option>
+                        <option>默认</option>
+                        <option>12px</option>
+                        <option>14px</option>
+                        <option>16px</option>
+                        <option>18px</option>
+                        <option>20px</option>
+                        <option>24px</option>
+                    </select>
+                </li>
+
+                <li id="set-style" style="float: right;">
+                    <select>
+                        <option>配色风格</option>
+                        <option>默认风格</option>
+                        <option>夜间模式</option>
+                        <option>护眼模式</option>
+                        <option>纸质风格</option>
+                        <option>岩石风格</option>
+                        <option>暗绿风格</option>
+                        <option>灰色风格</option>
+                    </select>
+                </li>
+
+            </ul><!-- .breadcrumb END -->
+
+        </div>
         <div class="row">
             <div class="span10">
                 <div class="page-header">
                     <h2>${chapter.title}</h2>
                     <h5 class="muted">小说：<a>${book.name}</a>&nbsp;|&nbsp;作者:<a>${book.author.nicename}</a>&nbsp;|&nbsp;更新时间:${chapter.updateTime4Display()}</h5>
                 </div>
-                <div class="book-content">
+                <div class="content">
                     ${chapter.content}
                 </div>
-
+                <div class="foot">
+                    <ul class="pager">
+                        <li><a href="#">&lt;上一章</a></li>
+                        <li><a href="#">回目录</a></li>
+                        <li><a href="#">下一章&gt;</a></li>
+                    </ul>
+                </div>
+            </div><!-- .span10 END -->
+            <div class="span2">
+                <img src="/resources/temp/2.jpg" />
+                <br><br>
+                <img src="/resources/temp/3.jpg" />
+                <br><br>
+                <img src="/resources/temp/4.jpg" />
             </div>
-            <div class="span2"></div>
         </div><!-- .row -->
     </div><!-- .container -->
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
 </body>
 </html>
