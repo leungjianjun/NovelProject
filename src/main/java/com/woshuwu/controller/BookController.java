@@ -42,6 +42,8 @@ public class BookController {
         Book book = bookDao.queryBookById(bookId);
         book.setCategory(categoryDao.queryCategoryById(book.getCategory().getId()));
         model.addAttribute("book",book);
+        model.addAttribute("previousChapterId",chapterDao.getPreviousChapterIdById(chapter.getId()));
+        model.addAttribute("nextChapterId",chapterDao.getNextChapterIdById(chapter.getId()));
         return "chapter_read";
     }
 

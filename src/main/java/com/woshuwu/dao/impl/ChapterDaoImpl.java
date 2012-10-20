@@ -55,4 +55,16 @@ public class ChapterDaoImpl extends JdbcDaoSupport implements ChapterDao {
             });
         return chapter;
     }
+
+    @Override
+    public long getPreviousChapterIdById(long id) {
+        long pid =this.getJdbcTemplate().queryForLong("SELECT id FROM chapter WHERE id <= ? LIMIT 1",id);
+        return pid == id ? -1 : pid;
+    }
+
+    @Override
+    public long getNextChapterIdById(long id) {
+        long nid = this.getJdbcTemplate().queryForLong("SELECT id FROM chapter WHERE id >= ? LIMIT 1",id);
+        return nid == id ? -1 : nid;
+    }
 }

@@ -34,6 +34,7 @@ public class CategoryDaoImpl extends JdbcDaoSupport implements CategoryDao {
         for(int i = 0; i < ids.length; i++){
             parentCategories[i] = _queryCategoryById(ids[i]);
         }
+        category.setParentCategories(parentCategories);
         return category;
     }
 

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,6 +17,11 @@
 
     <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.8.2-min.js"/>" ></script>
     <link href="<c:url value="/resources/css/global.css"/>" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body style="background-color:#EEFAEE">
 <!-- Navbar
@@ -26,27 +31,43 @@
             <div class="container">
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li class="active">
-                            <a href="./index.html">Home</a>
-                        </li>
                         <li class="">
-                            <a href="./getting-started.html">Get started</a>
+                            <a href="./index.html"><img src="http://i2.letvimg.com/img/201204/24/ListLogo.png" /></a>
                         </li>
+                        <li>
+                            <form class="navbar-search pull-left" action="">
+                                <div class="input-append">
+                                    <input class="span2" id="appendedInputButton" size="16" type="text">
+                                    <button class="btn" type="button">Go!</button>
+                                </div>
+                            </form>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">分类小说 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="nav-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+
                         <li class="">
-                            <a href="./scaffolding.html">Scaffolding</a>
+                            <a href="./scaffolding.html">排行榜</a>
                         </li>
-                        <li class="">
-                            <a href="./base-css.html">Base CSS</a>
+
+                        <li>
+                            <a>登录注册</a>
                         </li>
-                        <li class="">
-                            <a href="./components.html">Components</a>
+
+                        <li>
+                            <a href=""><i>历史记录</i></a>
                         </li>
-                        <li class="">
-                            <a href="./javascript.html">Javascript</a>
-                        </li>
-                        <li class="">
-                            <a href="./customize.html">Customize</a>
-                        </li>
+
                     </ul>
                 </div><!-- .collapse END -->
             </div>
@@ -61,8 +82,11 @@
         <div class="row">
             <ul class="breadcrumb">
                 <li><a href="#"><i class="icon-home"></i>&nbsp;&nbsp;小说首页</a><span class="divider">/</span></li>
-                <li><a href="#">Library</a><span class="divider">/</span></li>
-                <li class="active"><a href="#">Data</a></li>
+                <c:forEach items="${book.category.parentCategories}" var="cat">
+                    <li><a href="#">${cat.name}</a><span class="divider">/</span></li>
+                </c:forEach>
+                <li class="active"><a href="#">${book.category.name}</a><span class="divider">/</span></li>
+                <li class="active"><a href="#">${book.name}</a></li>
 
                 <!-- 阅读设置 -->
                 <li id="set-font-size" style="float: right;">
@@ -105,9 +129,9 @@
                 </div>
                 <div class="foot">
                     <ul class="pager">
-                        <li><a href="#">&lt;上一章</a></li>
-                        <li><a href="#">回目录</a></li>
-                        <li><a href="#">下一章&gt;</a></li>
+                        <li><a href="${book.id}-${previousChapterId}.html">&lt;上一章</a></li>
+                        <li><a href="/bookRead/${book.id}.html">回目录</a></li>
+                        <li><a href="${book.id}-${nextChapterId}.html">下一章&gt;</a></li>
                     </ul>
                 </div>
             </div><!-- .span10 END -->
@@ -122,7 +146,9 @@
     </div><!-- .container -->
     <footer>
         <div class="container">
-
+            <p><a target="_blank" href="#">关于我们</a><span>|</span><a target="_blank" href="#">友情链接</a><span>|</span><a target="_blank" href="#">意见反馈</a><span>|</span><a target="_blank" href="#">帮助中心</a><span>|</span><a target="_blank" href="#">联系我们</a></p>
+            <p>免责条款：本站的所有文学作品均由网友自发上传提供,并不代表本站观点和立场.本站的作品所有权归原作者所有!</p>
+            <p>Copyright © 2004-2012 <a href="www.woshuwu.com">我书屋网（woshuwu.com）</a>All rights reserved.</p>
         </div>
     </footer>
 </body>
