@@ -46,6 +46,12 @@
     -->
     <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
         <property name="resourceLoaderPath" value="/WEB-INF/views/"/>
+        <property name="velocityProperties">
+            <props>
+                <prop key="input.encoding">utf-8</prop>
+                <prop key="output.encoding">utf-8</prop>
+            </props>
+        </property>
     </bean>
     <!--
 
@@ -56,19 +62,7 @@
         <property name="cache" value="true"/>
         <property name="prefix" value=""/>
         <property name="suffix" value=".vm"/>
-    </bean>
-
-    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-        <property name="velocityProperties">
-            <props>
-                <prop key="resource.loader">file</prop>
-                <prop key="file.resource.loader.class">
-                    org.apache.velocity.runtime.resource.loader.FileResourceLoader
-                </prop>
-                <prop key="file.resource.loader.path">${webapp.root}/WEB-INF/velocity</prop>
-                <prop key="file.resource.loader.cache">false</prop>
-            </props>
-        </property>
+        <property name="contentType" value="text/html;charset=UTF-8" />
     </bean>
 
 </beans>
