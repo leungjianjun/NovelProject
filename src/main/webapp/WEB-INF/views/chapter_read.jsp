@@ -24,55 +24,7 @@
     <![endif]-->
 </head>
 <body style="background-color:#EEFAEE">
-<!-- Navbar
-    ============================================================ -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class="">
-                            <a href="./index.html"><img src="http://i2.letvimg.com/img/201204/24/ListLogo.png" /></a>
-                        </li>
-                        <li>
-                            <form class="navbar-search pull-left" action="">
-                                <div class="input-append">
-                                    <input class="span2" id="appendedInputButton" size="16" type="text">
-                                    <button class="btn" type="button">Go!</button>
-                                </div>
-                            </form>
-                        </li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">分类小说 <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li class="nav-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="">
-                            <a href="./scaffolding.html">排行榜</a>
-                        </li>
-
-                        <li>
-                            <a>登录注册</a>
-                        </li>
-
-                        <li>
-                            <a href=""><i>历史记录</i></a>
-                        </li>
-
-                    </ul>
-                </div><!-- .collapse END -->
-            </div>
-        </div><!-- .navbar-inner END-->
-    </div><!-- .navbar END -->
     <header>
         <div class="container">
             <img src="/resources/temp/1.jpg" />
@@ -149,7 +101,7 @@
             <p><a target="_blank" href="#">每日更新</a><span>-</span><a target="_blank" href="#">分类小说</a><span>-</span><a target="_blank" href="#">小说排名</a><span>-</span><a target="_blank" href="#">热门小说</a><span>-</span><a target="_blank" href="#">女生专区</a></p>
             <p><a target="_blank" href="#">关于我们</a><span>|</span><a target="_blank" href="#">友情链接</a><span>|</span><a target="_blank" href="#">意见反馈</a><span>|</span><a target="_blank" href="#">帮助中心</a><span>|</span><a target="_blank" href="#">联系我们</a></p>
             <p>免责条款：本站的所有文学作品均由网友自发上传提供,并不代表本站观点和立场.本站的作品所有权归原作者所有!</p>
-            <p>Copyright © 2004-2012 <a href="www.woshuwu.com">我书屋网（woshuwu.com）</a>All rights reserved.</p>
+            <p>Copyright © 2004-2012 <a href="http://www.woshuwu.com">我书屋网（woshuwu.com）</a>All rights reserved.</p>
         </div>
     </footer>
 </body>
