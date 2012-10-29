@@ -23,6 +23,60 @@
 </head>
 <body style="background-color:#EEFAEE">
     #parse("common/topbar.vm")
+    <header>
+        <div class="container">
 
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon-home"></i>&nbsp;&nbsp;小说首页</a><span class="divider">/</span></li>
+                #foreach($cat in $book.category.parentCategories)
+                    <li><a href="#">$cat.name</a><span class="divider">/</span></li>
+                #end
+                <li class="active"><a href="#">${book.category.name}</a><span class="divider">/</span></li>
+                <li class="active"><a href="#">${book.name}</a></li>
+
+            </ul><!-- .breadcrumb END -->
+        </div><!-- .row END -->
+        <div class="row">
+            <div class="span10">
+                <div class="page-header">
+                    <h2>$!{book.name}</h2>
+                    <h5 class="muted">作者:<a>$!{book.author.nicename}</a>&nbsp;|&nbsp;更新时间:$!{book.updateTime}</h5>
+                </div>
+                <div class="content">
+                    #foreach($volume in $book.volumes)
+                        <div class="volume">
+                            <h4>$volume.name</h4>
+                            <div>$volume.introduction</div>
+                            <ul>
+                                #foreach($chapter in $volume.chapters)
+                                    <li><a href="$chapter.id">$chapter.title</a></li>
+                                #end
+                            </ul>
+                        </div>
+                    #end
+                </div>
+            </div><!-- .span10 END -->
+            <div class="span2">
+                <img src="/resources/temp/2.jpg" />
+                <br><br>
+                <img src="/resources/temp/3.jpg" />
+                <br><br>
+                <img src="/resources/temp/4.jpg" />
+            </div>
+        </div>
+    </div><!-- .container END -->
+
+<footer>
+    <div class="container">
+        <p><a target="_blank" href="#">每日更新</a><span>-</span><a target="_blank" href="#">分类小说</a><span>-</span><a target="_blank" href="#">小说排名</a><span>-</span><a target="_blank" href="#">热门小说</a><span>-</span><a target="_blank" href="#">女生专区</a></p>
+        <p><a target="_blank" href="#">关于我们</a><span>|</span><a target="_blank" href="#">友情链接</a><span>|</span><a target="_blank" href="#">意见反馈</a><span>|</span><a target="_blank" href="#">帮助中心</a><span>|</span><a target="_blank" href="#">联系我们</a></p>
+        <p>免责条款：本站的所有文学作品均由网友自发上传提供,并不代表本站观点和立场.本站的作品所有权归原作者所有!</p>
+        <p>Copyright © 2004-2012 <a href="http://www.woshuwu.com">我书屋网（woshuwu.com）</a>All rights reserved.</p>
+    </div>
+</footer>
 </body>
 </html>

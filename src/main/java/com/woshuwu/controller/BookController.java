@@ -49,6 +49,10 @@ public class BookController {
 
     @RequestMapping(value="bookRead/{bookId}.html", method= RequestMethod.GET)
     public String bookReadPage(@PathVariable long bookId, ModelMap model){
+        Book book = bookDao.queryBookById(bookId);
+        book.setCategory(categoryDao.queryCategoryById(book.getCategory().getId()));
+        book.setVolumes(bookDao.queryBookContentById(book.getId()));
+        model.addAttribute("book",book);
         return "book_read";
     }
 
