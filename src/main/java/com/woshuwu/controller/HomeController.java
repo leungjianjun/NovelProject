@@ -14,5 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-
+    @RequestMapping(value="/index.html", method= RequestMethod.GET)
+    public String home(ModelMap model){
+        return "index";
+    }
 }
