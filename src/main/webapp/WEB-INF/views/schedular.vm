@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Schedular</title>
+    <script type="text/javascript" src="/resources/js/jquery-1.8.2-min.js" ></script>
+    <link href="/resources/css/global.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<ul>
+#foreach($jobKey in $jobKeys)
+<li><span>$jobKey.name</span><span>$jobKey.group</span></li>
+#end
+</ul>
+</body>
+</html>
