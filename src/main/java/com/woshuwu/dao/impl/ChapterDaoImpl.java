@@ -6,6 +6,7 @@ import com.woshuwu.model.Chapter;
 import com.woshuwu.model.ChapterStatus;
 import com.woshuwu.model.Volume;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -58,13 +59,21 @@ public class ChapterDaoImpl extends JdbcDaoSupport implements ChapterDao {
 
     @Override
     public long getPreviousChapterIdById(long id) {
-        long pid =this.getJdbcTemplate().queryForLong("SELECT id FROM chapter WHERE id <= ? LIMIT 1",id);
-        return pid == id ? -1 : pid;
+        try{
+            return this.getJdbcTemplate().queryForLong("SELECT id FROM chapter WHERE id < ? ORDER BY id DESC LIMIT 0,1",id);
+        }catch (EmptyResultDataAccessException e){
+            /*can't find out the result*/
+            return -1;
+        }
     }
 
     @Override
     public long getNextChapterIdById(long id) {
-        long nid = this.getJdbcTemplate().queryForLong("SELECT id FROM chapter WHERE id >= ? LIMIT 1",id);
-        return nid == id ? -1 : nid;
+        try{
+            return this.getJdbcTemplate().queryForLong("SELECT id FROM chapter WHERE id > ? ORDER BY id ASC LIMIT 0,1",id);
+        }catch (EmptyResultDataAccessException e){
+            /*can't find out the result*/
+            return -1;
+        }
     }
 }

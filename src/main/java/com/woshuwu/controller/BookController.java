@@ -61,6 +61,12 @@ public class BookController {
         return "book_introduce";
     }
 
+    @RequestMapping(value="/index.html", method= RequestMethod.GET)
+    public String home(ModelMap model){
+
+        return "home";
+    }
+
     //------------------------------------------------------------------
     //----------------- Novel Edit Module ------------------------------
     // 小说管理模块是作者管理自己的小说的后台页面。小说的管理包括对小说的添加、修改、删除

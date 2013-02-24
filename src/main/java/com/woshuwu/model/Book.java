@@ -95,6 +95,14 @@ public class Book {
         return createTime;
     }
 
+    //===============  util method ================
+    public String updateTime4Display(){
+        return updateTime.get(Calendar.YEAR)+"-"+updateTime.get(Calendar.MONTH)+
+                "-"+updateTime.get(Calendar.DATE)+" "+updateTime.get(Calendar.HOUR_OF_DAY)+":"+
+                updateTime.get(Calendar.MINUTE)+":"+updateTime.get(Calendar.SECOND);
+
+    }
+
     public void setCreateTime(Calendar createTime) {
         this.createTime = createTime;
     }

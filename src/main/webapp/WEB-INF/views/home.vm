@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>我书屋小说网</title>
+    <meta name="title" content="" />
+    <meta name="description" content="中国最大、资源最全、广告最少的免费在线小说、文学阅读网站。拥有各类小说：修真小说、玄幻小说....。然你享受最好的小说阅读体验" />
+    <meta name="keywords" content="在线免费小说" />
+    <!--<link rel="search" type="application/opensearchdescription+xml" href="http://search.taobao.com/opensearch.xml" title="淘宝购物" />  -->
+    <link rel="shortcut icon" href="/resources/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/ico/apple-touch-icon-144-precomposed.png" >
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/ico/apple-touch-icon-114-precomposed.png" >
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/ico/apple-touch-icon-72-precomposed.png" >
+    <link rel="apple-touch-icon-precomposed" href="/resources/ico/apple-touch-icon-57-precomposed.png" >
+
+    <script type="text/javascript" src="/resources/js/jquery-1.8.2-min.js" ></script>
+    <link href="/resources/css/global.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="topbar">
+    <div class="container">
+        <div class="inner-left" style="float: left"><span>欢迎访问<a>我书屋小说网</a>,请先<a>登录</a>或者<a>注册</a></span></div>
+        <div class="inner-right" style="float: right"><span><a>导航</a><a>分类</a><a>排名</a><a>帮助</a></span></div>
+    </div>
+</div><!-- .topbar END -->
+<header>
+    <div class="container">
+        <div class="top-logo">
+            <div class="logo">
+                <a href="#"><img src="http://www.hongxiu.com/images_201110/logo.gif"/></a>
+            </div>
+            <div class="ad">
+                <a href="#"><img src="http://i3.letvimg.com/cms/201210/30/9e5d78f5233b49b2c613ed72b328354e1961.jpg" /></a>
+            </div>
+        </div>
+        <div class="top-search">
+            <form class="nav-search" action="">
+                <div class="input-append">
+                    <input class="span3" size="16" type="text">
+                    <button class="btn" type="button">搜索</button>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <!-- ads -->
+        </div>
+    </div>
+</header>
+<div class="menu-box">
+    <div class="container">
+        <div class="nav-left">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">分类小说</a></li>
+                <li><a href="">最新更新</a></li>
+                <li><a href="">全本小说</a></li>
+                <li><a href="">免费小说</a></li>
+                <li><a href="">小说排名</a></li>
+                <li><a href="">热门小说</a></li>
+                <li><a href="">女生专区</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="">文学探索</a></li>
+                <li><a href="">浏览记录</a></li>
+                <li><a href="">移动客户端</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span4">
+            <div class="nav-pic">
+                <div class="main-pic">
+                    <a class="active"><img src="http://fm1.xs8xs8.cn/data/cover/14/133952.jpg"/></a>
+                    <a><img src="http://fm1.xs8xs8.cn/data/cover/a5/136742.jpg"/></a>
+                    <a><img src="http://fm4.xs8xs8.cn/data/cover/55/146903.jpg"/></a>
+                    <a><img src="http://fm1.xs8xs8.cn/data/cover/a5/136742.jpg"/></a>
+                </div>
+                <ul class="thumb-pic">
+                    <li class="active"><img src="http://fm1.xs8xs8.cn/data/cover/14/133952.jpg"/></li>
+                    <li><img src="http://fm1.xs8xs8.cn/data/cover/a5/136742.jpg"/></li>
+                    <li><img src="http://fm4.xs8xs8.cn/data/cover/55/146903.jpg"/></li>
+                    <li><img src="http://fm1.xs8xs8.cn/data/cover/a5/136742.jpg"/></li>
+                </ul>
+                <div class="main-text">
+                    <div class="active">
+                        <p><a>天价剩女：挑战魔性总裁</a></p>
+                        <p>婚礼当天，新娘不是她，大醉一场。次日醒来，天旋地转，全身散架，更破天荒的是，身边躺着一个熟悉的男人，她失声狂叫。</p>
+                    </div>
+                    <div>
+                        <p><a>【女主蜕变】重生回到1997</a></p>
+                        <p>婚礼当天，新娘不是她，大醉一场。次日醒来，天旋地转，全身散架，更破天荒的是，身边躺着一个熟悉的男人，她失声狂叫。</p>
+                    </div>
+                    <div>
+                        <p><a>妾上无妻：王爷别贪欢</a></p>
+                        <p>婚礼当天，新娘不是她，大醉一场。次日醒来，天旋地转，全身散架，更破天荒的是，身边躺着一个熟悉的男人，她失声狂叫。</p>
+                    </div>
+                    <div>
+                        <p><a>腹黑小妖精：娘子，矜持点！</a></p>
+                        <p>婚礼当天，新娘不是她，大醉一场。次日醒来，天旋地转，全身散架，更破天荒的是，身边躺着一个熟悉的男人，她失声狂叫。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span5"></div>
+        <div class="span3">
+            <div class="nav-tabbable">
+                <ul class="nav-tab">
+                    <li class="active"><a href="#tab1">全站推荐</a></li>
+                    <li><a href="#tab2">上周推荐</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="#tab1">
+
+                    </div>
+                    <div class="tab-pane" id="#tab2"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

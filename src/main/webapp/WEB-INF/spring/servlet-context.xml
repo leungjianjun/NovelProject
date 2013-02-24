@@ -13,8 +13,8 @@
     <!-- Configures the @Controller programming model -->
     <mvc:annotation-driven />
 
-    <!-- Forwards requests to the "/" resource to the "welcome" view -->
-    <mvc:view-controller path="/" view-name="welcome"/>
+    <!-- Forwards requests to the "/" resource to the "welcome" view
+    <mvc:view-controller path="/" view-name="home"/>-->
 
     <!-- Configures Handler Interceptors -->
     <mvc:interceptors>
