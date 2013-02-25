@@ -3,9 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>NovelProject</groupId>
   <artifactId>NovelProject</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0</version>
-  <name>NovelProject Maven Webapp</name>
+    <modules>
+        <module>Test</module>
+    </modules>
+    <name>NovelProject Maven Webapp</name>
   <url>http://maven.apache.org</url>
     <properties>
         <org.springframework.version>3.2.0.RELEASE</org.springframework.version>
