@@ -22,10 +22,10 @@ public class Test {
         //BasicConfigurator.configure();
         Scheduler sched = StdSchedulerFactory.getDefaultScheduler();
         sched.start();
-        JobDetail job = JobBuilder.newJob(CnbetaCrawler.class).withIdentity("job1", "group1").build();
+        JobDetail job = JobBuilder.newJob(Sljx.class).withIdentity("job1", "group1").build();
         job.getJobDataMap().put("ArticleList",cnBetas);
 
-        Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").withSchedule(CronScheduleBuilder.cronSchedule("0 * * * * ?")).build();
+        Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").withSchedule(CronScheduleBuilder.cronSchedule("0/50 25-40 13 * * ?")).build();
         // Tell quartz to schedule the job using our trigger
         sched.scheduleJob(job, trigger);
     }

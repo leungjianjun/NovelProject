@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class TryWithHWND {
 
-    private Map<String,HWND> HWNDMap = new HashMap<String,HWND>();
+    public Map<String,HWND> HWNDMap = new HashMap<String,HWND>();
 
     public interface User32 extends StdCallLibrary {
         User32 INSTANCE = (User32) Native.loadLibrary("user32", User32.class);
@@ -69,6 +69,27 @@ public class TryWithHWND {
         }
     }
 
+    public void RefreshCache(){
+        HWNDMap.clear();
+        user32.EnumWindows(new WNDENUMPROC() {
+            int count = 0;
+            @Override
+            public boolean callback(HWND hWnd, Pointer arg1) {
+                byte[] windowText = new byte[512];
+                user32.GetWindowTextA(hWnd, windowText, 512);
+                String wText = Native.toString(windowText,"GBK");
+                if (wText.isEmpty()) {
+                    return true;
+                }
+                if(!HWNDMap.containsKey(wText)){
+                    System.out.println("Found window with text " + hWnd + " Text: " + wText);
+                    HWNDMap.put(wText,hWnd);
+                }
+                return true;
+            }
+        }, null);
+    }
+
     public boolean sendMessage(String message, HWND hwnd){
         if(hwnd == null){
             return false;
@@ -81,7 +102,10 @@ public class TryWithHWND {
 
     public static void main(String[] args) {
         TryWithHWND th = new TryWithHWND();
-        th.sendMessage("test看看",th.getHWND("C/C++ Developers"));
+        th.RefreshCache();
+        for(String windowName:th.HWNDMap.keySet()){
+            th.sendMessage("test看看",th.getHWND(windowName));
+        }
         /*String text = "上午好";
         final User32 user32 = User32.INSTANCE;
         HWND qqWin = user32.FindWindowW(null, Native.toString("工作任务 - Notepad".getBytes(),"GBK"));
