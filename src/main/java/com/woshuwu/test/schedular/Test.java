@@ -25,7 +25,7 @@ public class Test {
         JobDetail job = JobBuilder.newJob(Sljx.class).withIdentity("job1", "group1").build();
         job.getJobDataMap().put("ArticleList",cnBetas);
 
-        Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").withSchedule(CronScheduleBuilder.cronSchedule("0/50 25-40 13 * * ?")).build();
+        Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").withSchedule(CronScheduleBuilder.cronSchedule("0/50 * 9-20 * * ?")).build();
         // Tell quartz to schedule the job using our trigger
         sched.scheduleJob(job, trigger);
     }
